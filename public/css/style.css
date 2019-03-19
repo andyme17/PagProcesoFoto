@@ -1,0 +1,52 @@
+html{
+    font-size: 14px;
+}
+  
+.icon{
+    font-size: 16px;
+}
+  
+nav{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.05rem;
+}
+  
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: white;
+}
+  
+.iconf{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.651);
+}
+  
+.iconf:hover{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+  
+.font-secondary{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.titulo{
+    font-family: 'Roboto', sans-serif;
+    color:rgb(138, 25, 11);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: rgb(187, 35, 14) !important;
+    border-color: #862a10 !important;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: rgb(138, 25, 11);;
+    border-color: #621e0c;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 .2rem rgba(230, 73, 69, 0.5) !important;
+}
+
