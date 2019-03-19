@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use Session;
+use Sesion;
+use
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -54,10 +56,6 @@ class LoginController extends Controller
             'emailpf.email' => 'Ingresa un correo electrónico válido',
             'password.required' => 'Ingresa tu contraseña'
         ]);      
-
-        //$datos = $request->session()->all();
-
-        //return view('home', compact('datos'));
     }
 
     /**
@@ -68,21 +66,19 @@ class LoginController extends Controller
      * @return mixed
      */
     protected function authenticated(Request $request, $user)
-    {
+    {/*
         $agent  =  new  Agent();
-        //$data = $request->session()->all();
-        $platform = $agent->platform();
-        $version = $agent->version($platform);
-        //$data = Session::all();
+        //$platform = $agent->platform();//get SO
         $session_id = $request->session()->token();
-        //$browser = get_browser( $request->header('User-Agent') , true);
-        //$browser = $request->header('User-Agent');
         $ip_address =  \Request :: getClientIp (true); 
-        $browser = $agent->browser();
-        $browser_version = $agent->version($browser);  
-        return view('datos', compact('session_id','ip_address','platform','version','browser','browser_version'));      
+        //$browser = $agent->browser();
+        //$browser_version = $agent->version($browser);  
+        $agente = $agent->platform()." ".$agent->browser()." ".$agent->version($browser);
+
+        DB::table('pf_session')->insert([
+            "session_id"-> $session_id,
+            "ip_address"-> $ip_address,
+            "user_agent"-> $agente,
+        ]);      */    
     }  
-
-    
-
 }
