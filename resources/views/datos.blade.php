@@ -13,13 +13,12 @@
 
         <h1 class="titulo font-weight-bold">Bienvenido</h1> 
         <?php
-            print_r($session_id);
-            print_r($platform);
-            print_r($version);
-            print_r($ip_address);
-            print_r($browser);
-            print_r($browser_version);
-        ?>
+          
+           
+            
+           print_r($user_session);
+       ?>
+        
         
         
         

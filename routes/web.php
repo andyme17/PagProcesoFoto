@@ -10,28 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::view('/','principal')->name('inicio');//se utiliza para paginas que solo muestren contenido html
+
+Route::view('aviso','aviso')->name('aviso');//muestra el aviso legal
+
+Route::view('/','principal')->name('inicio');
 Route::view('coberturas','coberturas')->name('coberturas');
 Route::view('colecciones','colecciones')->name('colecciones');
 Route::view('fotografos','fotografos')->name('fotografos');
-Route::view('aviso','aviso')->name('aviso');//muestra el aviso legal
-//Route::view('login','login')->name('inicio_sesion');
-//Route::view('registro','registro')->name('registro');
+Route::view('aviso','aviso')->name('aviso');
 
 Route::get('contacto','MessagesController@create')->name('contacto.create');
 Route::post('contacto','MessagesController@store')->name('contacto.store');
 
-//Route::get('/contact','contactController@show')->name('contacto');
-//Route::post('/contact','contactController@store')->name('contacto.form');
-
-//Route::get('login','Auth\LoginController@showLoginForm')->name('inicio_sesion');
-//Route::post('login','Auth\LoginController@login');
-
-//Auth::routes();
-
-//Tabla Usuarios
-Route::get('/pruebas','UsuarioController@create')->name('usuarios');
-Route::post('/pruebas','UsuarioController@store');
+/////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////   Rutas de autenticación del usuario               ////////////////////////////
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -55,6 +47,9 @@ if ($options['verify'] ?? false) {
 }
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'Auth\LoginController@authenticated')->name('datos-session');
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Route::get('/home', 'Auth\LoginController@authenticated')->name('datos-session');
 
 

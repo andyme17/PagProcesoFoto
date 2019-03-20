@@ -12,16 +12,7 @@
         @endif
 
         <h1 class="titulo font-weight-bold">Bienvenido</h1> 
-        
-        <a href="{{ route('datos-session, user->id') }}" class="btn btn-info">Mostrar datos de sesión</a>
-   
-        <?php
-            echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
-
-            $navegador = get_browser(null, true);
-            
-            print_r($navegador);
-        ?>
+     
 </div>
 
 @endsection

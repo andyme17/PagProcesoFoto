@@ -6,6 +6,7 @@ use Sesion;
 use Session;
 use User;
 use DateTime;
+use DB;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -18,6 +19,7 @@ class SuccessfulLogin
      *
      * @return void
      */
+
     public function __construct()
     {
         //
@@ -31,38 +33,43 @@ class SuccessfulLogin
      */
     public function handle(Login $event)
     {
-        //$event->user = new DateTime;
-        $usuario_logueado = $event->user;
-       /* $event->sesion->last_activity = new DateTime;
-        $event->sesion->save();*/
+        $user_sesion = $event->user;
 
-        
+       // return view('datos', compact('user_sesion'));
 
-        $user_session = new Sesion();
+       
+              
+        //$event->user->last_activity = new DateTime;
+        //$event->sesion->save();
+/*
+        if($event->user){
+            $user_sesion = new DateTime;
+        }
 
-        $user_session->session_id = $session_id;
-        $user_session->ip_address = $ip_address;
-        $user_session->user_agent = $agente;
-        $user_session->session_id = $session_id;
-        $user_session->last_activity = new DateTime;
-        $user_session->save();
+        DB::table('pf_session')->insert([
+            "last_activity"-> $user_sesion,
+        ]);
 
-        /*DB::table('pf_session')->insert([
+        DB::table('pf_session')->insert([
             "session_id"-> $session_id,
             "ip_address"-> $ip_address,
             "user_agent"-> $agente,
         ]);*/
     }
 
-    protected function afterLogin(Request $request, $user){
+    /*protected function afterLogin(Request $request, $user){
         $agent = new Agent();
-        //$platform = $agent->platform();//get SO
-        $session_id = $request->session()->token();
-        $ip_address =  \Request :: getClientIp (true); 
-        //$browser = $agent->browser();
-        //$browser_version = $agent->version($browser);  
-        $agente = $agent->platform()." ".$agent->browser()." ".$agent->version($browser);
 
-        return $session_id,$ip_address;
-    }
+        $session_id = $request->session()->token();
+        $platform = $agent->platform();//get SO
+        $ip_address =  \Request :: getClientIp (true); 
+        $browser = $agent->browser();
+        $browser_version = $agent->version($browser);  
+        $agente = $agent->platform()." ".$agent->browser()." ".$agent->version($browser);
+        $table_sesion = array(  'session_id' => $sesion_id,
+                                'ip_cliente' => $ip_address, 
+                                'agente' => $agente,
+        );
+        return $table_sesion;
+    }*/
 }
