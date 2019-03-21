@@ -12,7 +12,9 @@
         @endif
 
         <h1 class="titulo font-weight-bold">Bienvenido</h1> 
-     
+        @php
+            //print_r($user_sesion);
+        @endphp
 </div>
 
 @endsection

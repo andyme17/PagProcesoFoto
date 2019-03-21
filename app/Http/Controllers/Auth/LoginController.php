@@ -56,8 +56,31 @@ class LoginController extends Controller
             'emailpf.required' => 'Ingresa tu correo electrónico',
             'emailpf.email' => 'Ingresa un correo electrónico válido',
             'password.required' => 'Ingresa tu contraseña'
-        ]);      
-    }
+        ]);    
+    } 
 
- 
+    public function authenticated(Request $request,$user){
+        $agent = new Agent();
+
+        $id = $request->session()->token();
+        $plataform = $agent->platform();//get SO
+        $ip =  \Request :: getClientIp (true); 
+        $browser = $agent->browser();
+        $browser_version = $agent->version($browser);  
+        $agente = $plataforma." ".$browser." ".$browser_version;
+        $dataS = $request->session();
+        /*table_sesion = array(  'id' => $sesion_id,
+                                'ip' => $ip_address, 
+                                'agente' => $agente,
+                                'datos' => $dataS
+                        );
+        return $table_sesion;*/
+
+        DB::table('pf_session')->insert([
+            "session_id"-> $id,
+            "ip_address" -> $ip,
+            "user_agent" -> $agente,
+            "user_data" -> $dataS
+        ]);
+    }
 }
