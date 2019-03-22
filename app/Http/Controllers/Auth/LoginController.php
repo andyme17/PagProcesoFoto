@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use Session;
-use Sesion;
-use Datetime;
+use App\Sesion;
+use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -59,28 +59,24 @@ class LoginController extends Controller
         ]);    
     } 
 
-    public function authenticated(Request $request,$user){
+    protected function authenticated(Request $request,$user){
         $agent = new Agent();
-
-        $id = $request->session()->token();
-        $plataform = $agent->platform();//get SO
-        $ip =  \Request :: getClientIp (true); 
+        $plataforma = $agent->platform();//get SO
         $browser = $agent->browser();
         $browser_version = $agent->version($browser);  
-        $agente = $plataforma." ".$browser." ".$browser_version;
-        $dataS = $request->session();
-        /*table_sesion = array(  'id' => $sesion_id,
-                                'ip' => $ip_address, 
-                                'agente' => $agente,
-                                'datos' => $dataS
-                        );
-        return $table_sesion;*/
+        $agente = $plataforma." , ".$browser." ".$browser_version;
+    
+        $id = $request->session()->token();
+        $ip =  \Request :: getClientIp (true); 
+        //$dataS = $request->session()->all();      
+        
+        $table_sesion = new Sesion();
+        $table_sesion->session_id = $id;
+        $table_sesion->ip_address = $ip;
+        $table_sesion->user_agent = $agente;
+       // $table_sesion->user_data = $dataS;
+        $table_sesion->last_activity = now();
 
-        DB::table('pf_session')->insert([
-            "session_id"-> $id,
-            "ip_address" -> $ip,
-            "user_agent" -> $agente,
-            "user_data" -> $dataS
-        ]);
+        $table_sesion->save();
     }
 }

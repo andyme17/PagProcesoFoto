@@ -13,7 +13,7 @@
 
         <h1 class="titulo font-weight-bold">Bienvenido</h1> 
         @php
-            //print_r($user_sesion);
+         //   print_r($table_sesion);
         @endphp
 </div>
 

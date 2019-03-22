@@ -50,6 +50,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Route::get('/home', 'Auth\LoginController@authenticated')->name('datos-session');
+//Route::get('/datos', 'Auth\LoginController@authenticated')->name('datos-session');
 
 

@@ -13,10 +13,14 @@
 
         <h1 class="titulo font-weight-bold">Bienvenido</h1> 
         <?php
+           var_dump($browser);
+           var_dump($plataforma);
+           var_dump($browser_version);
+           var_dump($agente);
+           var_dump($ip);
+           var_dump($id);
+           var_dump($dataS);
           
-           
-            
-           print_r($user_session);
        ?>
         
         
