@@ -84,6 +84,6 @@ class LoginController extends Controller
         $table_cltsesion -> session_id = $id;
         $table_cltsesion -> cliente_id = auth()->id();
         $table_cltsesion -> fecha = now();
-        $table_cltsesion->save();      
+        $table_cltsesion -> save();      
     }
 }

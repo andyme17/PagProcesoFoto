@@ -48,7 +48,6 @@ CREATE TABLE `pf_cliente` (
 	`saldo` FLOAT NOT NULL DEFAULT '0',
 	`created_at` TIMESTAMP NULL DEFAULT NULL COMMENT 'Fecha de creación de registro',
 	`updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT 'Fecha de actualización de registro',
-	`evento` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`),
 	UNIQUE INDEX `email_UNIQUE` (`emailpf`)
 )
@@ -68,3 +67,14 @@ ALTER TABLE `pf_sesion` CHANGE `user_data` `user_data` TEXT CHARACTER SET utf8 C
 
 ---------------------------------------------Tabla Fotografo----------------------------------------------------------------------------------
 --Creación de tabla fotografos
+CREATE TABLE `pf_fotografo` (
+  `fotografo_id` int(10) UNSIGNED NOT NULL,
+  `nombre` varchar(60) NOT NULL COMMENT 'Nombre del Fotografo',
+  `apellido` varchar(120) NOT NULL COMMENT 'Apellido del Fotografo',
+  `email` varchar(120) NOT NULL COMMENT 'Correo electrónico',
+  `fecha_nac` date NOT NULL COMMENT 'Año de nacimiento del Fotografo',
+  `foto_perfil`
+  `descripcion` 
+  `created_at` TIMESTAMP NULL DEFAULT NULL COMMENT 'Fecha de creación de registro',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT 'Fecha de actualización de registro'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Registro de los fotografos';
