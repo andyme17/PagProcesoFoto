@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use DB;
 use Session;
 use App\Sesion;
+use App\ClienteSesion;
 use Carbon\Carbon;
-use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -68,15 +69,21 @@ class LoginController extends Controller
     
         $id = $request->session()->token();
         $ip =  \Request :: getClientIp (true); 
-        //$dataS = $request->session()->all();      
         
+        //Se almacenan los datos correspondientes a la tabla pf_sesion
         $table_sesion = new Sesion();
         $table_sesion->session_id = $id;
         $table_sesion->ip_address = $ip;
         $table_sesion->user_agent = $agente;
-       // $table_sesion->user_data = $dataS;
+        // $table_sesion->user_data = $dataS; Al no estar bien definido lo que contiene este campo, se modifica el campo para que acepte valores nulos
         $table_sesion->last_activity = now();
-
         $table_sesion->save();
+
+        //Se almacenan los datos correspondientes a la tabla pf_cliente_sesion
+        $table_cltsesion = new ClienteSesion();
+        $table_cltsesion -> session_id = $id;
+        $table_cltsesion -> cliente_id = auth()->id();
+        $table_cltsesion -> fecha = now();
+        $table_cltsesion->save();      
     }
 }

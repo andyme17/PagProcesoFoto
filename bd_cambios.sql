@@ -65,3 +65,6 @@ ALTER TABLE `pf_sesion` CHANGE `user_data` `user_data` TEXT CHARACTER SET utf8 C
 
 
 --?????? ALTER TABLE `pf_sesion` CHANGE `last_activity` `last_activity` DATETIME NOT NULL COMMENT 'Fecha de la ultima actividad del usuario';
+
+---------------------------------------------Tabla Fotografo----------------------------------------------------------------------------------
+--Creación de tabla fotografos
