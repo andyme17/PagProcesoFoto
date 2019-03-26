@@ -49,7 +49,13 @@ if ($options['verify'] ?? false) {
 Route::get('/home', 'HomeController@index')->name('home');
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////   Rutas de autenticación del administrador              ////////////////////////////
 
-//Route::get('/datos', 'Auth\LoginController@authenticated')->name('datos-session');
+// Authentication Routes...
+Route::get('admin/login', 'AdministratorController@showLoginForm');
+//Route::post('login', 'Auth\LoginController@login');
+//Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+
 
 

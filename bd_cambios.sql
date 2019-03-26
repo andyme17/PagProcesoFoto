@@ -67,7 +67,7 @@ ALTER TABLE `pf_sesion` CHANGE `user_data` `user_data` TEXT CHARACTER SET utf8 C
 
 ---------------------------------------------Tabla Fotografo----------------------------------------------------------------------------------
 --Creación de tabla fotografos
-CREATE TABLE `pf_fotografo` (
+/*CREATE TABLE `pf_fotografo` (
   `fotografo_id` int(10) UNSIGNED NOT NULL,
   `nombre` varchar(60) NOT NULL COMMENT 'Nombre del Fotografo',
   `apellido` varchar(120) NOT NULL COMMENT 'Apellido del Fotografo',
@@ -77,4 +77,9 @@ CREATE TABLE `pf_fotografo` (
   `descripcion` 
   `created_at` TIMESTAMP NULL DEFAULT NULL COMMENT 'Fecha de creación de registro',
   `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT 'Fecha de actualización de registro'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Registro de los fotografos';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Registro de los fotografos';*/
+
+---------------------------------------------Tabla pf_usuario------------------------------------------------------------------------------------
+
+--Adición del campo created_at y updated_at a la tabla usuarios
+ALTER TABLE `pf_usuario` ADD `created_at` TIMESTAMP NULL COMMENT 'Fecha de creación de registro' AFTER `activo`, ADD `updated_at` TIMESTAMP NULL COMMENT 'Fecha de actualización de registro' AFTER `created_at`;
