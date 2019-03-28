@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{ route('inicio') }}">
-           <img src="img/header_logo_pf-n.png" alt="Logotipo de la empresa" width="150" height="auto">
+           <img src="../img/header_logo_pf-n.png" alt="Logotipo de la empresa" width="150" height="auto">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>

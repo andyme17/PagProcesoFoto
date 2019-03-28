@@ -45,6 +45,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
     ],
 
     /*
@@ -68,9 +73,15 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
-            'table' => 'pf_cliente'
+            'table' => 'pf_cliente',
         ],
 
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+            'table' => 'pf_usuario',
+        ],
+ 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

@@ -16,7 +16,7 @@
                 </div>           
             </article>
             <article class="col-12 col-md-4 align-center">
-                <img class="img-fluid p-4" src="img/footer_logo_pf-n.png" alt="Logo del sitio" width="250">
+                <img class="img-fluid p-4" src="../img/footer_logo_pf-n.png" alt="Logo del sitio" width="250">
             </article>
         </div>            
     </div>

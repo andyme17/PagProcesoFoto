@@ -8,8 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
-
-    
+   
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
@@ -23,11 +22,12 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
-    @include('partials/nav')
-        <main class="py-4">
-            @yield('content')
-        </main>   
-    @include('partials/footer')     
+    <div class="container mt-2 pt-4 text-center">
+        <img class="text-center" src="../img/header_logo_pf.png" alt="Logotipo de la empresa" height="50">
+    </div>
+    <main>
+        @yield('content')
+    </main>   
     <script src="js/jquery-3.3.1.min.js" ></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

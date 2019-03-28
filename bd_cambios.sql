@@ -21,7 +21,7 @@ ALTER TABLE `pf_cliente` ADD `telpf` VARCHAR(20) NOT NULL COMMENT 'Telefono del 
 ------------------------------------------------------------------------------------------------------------
 --Adición del campo remember_token para poder recordar la contraseña del usuario
 
-ALTER TABLE `pf_cliente` ADD `remember_token` VARCHAR(100) NULL COMMENT 'Token para recordar cuenta' AFTER `passpf`;
+ALTER TABLE `pf_cliente` ADD `remember_token` VARCHAR(100) NULL COMMENT 'Token para recordar cuenta' AFTER `password`;
 
 ------------------------------------------------------------------------------------------------------------
 --Adicion de los campos para laravel
@@ -83,3 +83,11 @@ ALTER TABLE `pf_sesion` CHANGE `user_data` `user_data` TEXT CHARACTER SET utf8 C
 
 --Adición del campo created_at y updated_at a la tabla usuarios
 ALTER TABLE `pf_usuario` ADD `created_at` TIMESTAMP NULL COMMENT 'Fecha de creación de registro' AFTER `activo`, ADD `updated_at` TIMESTAMP NULL COMMENT 'Fecha de actualización de registro' AFTER `created_at`;
+
+ALTER TABLE `pf_usuario` CHANGE `usuario_id` `usuario_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del usuario';
+
+ALTER TABLE `pf_perfil` CHANGE `perfil_id` `perfil_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--Cambio de nombre del campo passpf a password
+
+ALTER TABLE `pf_usuario` CHANGE `passpf` `password` VARCHAR(191) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Contraseña cifrada en bcrypt';
