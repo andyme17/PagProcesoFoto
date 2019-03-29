@@ -52,13 +52,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 //////////////////////////   Rutas de autenticación del administrador              ////////////////////////////
 
 // Authentication Routes...
-Route::get('admin/login', 'Admin\AdministratorController@showLoginForm');
-Route::post('admin/login', 'Admin\AdministratorController@login')->name('admin.login');
+Route::get('admin/login', 'AdministratorController@showLoginForm');
+Route::post('admin/login', 'AdministratorController@login')->name('admin.login');
 
-Route::get('admin/home', 'Admin\Administrator@show')->name('admin.home');
+Route::view('admin/home', 'admin/home')->name('admin.home');
 
 //Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-
+/* Route::get('/admin', function(){
+    return 'Admin';
+ });*/
 
 
 

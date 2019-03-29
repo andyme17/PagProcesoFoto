@@ -91,3 +91,5 @@ ALTER TABLE `pf_perfil` CHANGE `perfil_id` `perfil_id` INT(10) UNSIGNED NOT NULL
 --Cambio de nombre del campo passpf a password
 
 ALTER TABLE `pf_usuario` CHANGE `passpf` `password` VARCHAR(191) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Contraseña cifrada en bcrypt';
+
+ALTER TABLE `pf_usuario_sesion` CHANGE `usuario_sesion_id` `usuario_sesion_id` BIGINT(20) NOT NULL AUTO_INCREMENT;
