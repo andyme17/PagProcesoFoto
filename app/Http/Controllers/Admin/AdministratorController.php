@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Session;
+use App\Sesion;
+use App\UsuarioSesion;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Jenssegers\Agent\Agent; 
 
 class AdministratorController extends Controller
 {
@@ -18,12 +23,7 @@ class AdministratorController extends Controller
      *
      * @var string
     */
-    protected $redirectTo = 'admin/home';
-
-    public function __construct()
-    {
-       //$this->middleware('guest')->except('logout');
-    }
+    protected $redirectTo = '/admin_home';
 
     public function showLoginForm()
     {
@@ -52,20 +52,12 @@ class AdministratorController extends Controller
         ]);    
     } 
 
-    public function showLoginForm()
-    {
-        return view('admin.login');
-    }
-/*
-    public function redirectTo()
-    {
-        return view('admin.login');
-    }*/
-    
-    protected function authenticated(Request $request,$user){
+    protected function redirectTo() {
+        return '/admin_home';
+     }
 
-        //return redirect('admin.home');
-        /*
+    protected function authenticated(Request $request,$user){
+    
         $agent = new Agent();
         $plataforma = $agent->platform();//get SO
         $browser = $agent->browser();
@@ -83,15 +75,13 @@ class AdministratorController extends Controller
         // $table_sesion->user_data = $dataS; Al no estar bien definido lo que contiene este campo, se modifica el campo para que acepte valores nulos
         $table_sesion->last_activity = now();
         $table_sesion->save();
-
-        //Se almacenan los datos correspondientes a la tabla pf_cliente_sesion
-        $table_cltsesion = new ClienteSesion();
+       
+       //Se almacenan los datos correspondientes a la tabla pf_usuario_sesion
+        $table_cltsesion = new UsuarioSesion();
         $table_cltsesion -> session_id = $id;
-        $table_cltsesion -> cliente_id = auth()->id();
+        $table_cltsesion -> usuario_id = auth()->guard('admin')->id();
         $table_cltsesion -> fecha = now();
-        $table_cltsesion -> save();      */
-    }
+        $table_cltsesion -> save();     
+    }   
 
-   
 }
-

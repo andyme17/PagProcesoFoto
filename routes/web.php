@@ -11,6 +11,21 @@
 |
 */
 
+//Insertar nuevos usuarios con route
+/*
+Route::get('test',function(){
+    $user = new App\Admin;
+    $user->nombre = 'Andrea';
+    $user->apellido = 'Morales';
+    $user->emailpf = 'andrea@mail.com';
+    $user->password = bcrypt('pruebas123');
+    $user->perfil_id = 2;
+    $user->save();
+
+    return $user;
+});*/
+
+
 Route::view('aviso','aviso')->name('aviso');//muestra el aviso legal
 
 Route::view('/','principal')->name('inicio');
@@ -24,6 +39,8 @@ Route::post('contacto','MessagesController@store')->name('contacto.store');
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////   Rutas de autenticación del usuario               ////////////////////////////
+
+//Auth::routes();
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -52,15 +69,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 //////////////////////////   Rutas de autenticación del administrador              ////////////////////////////
 
 // Authentication Routes...
-Route::get('admin/login', 'AdministratorController@showLoginForm');
-Route::post('admin/login', 'AdministratorController@login')->name('admin.login');
+Route::get('admin', 'Admin\AdministratorController@showLoginForm')->name('admin.login');
+Route::post('admin', 'Admin\AdministratorController@login');
 
-Route::view('admin/home', 'admin/home')->name('admin.home');
+Route::get('/admin_home', 'Admin\AdminHomeController@index');
 
 //Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-/* Route::get('/admin', function(){
-    return 'Admin';
- });*/
 
 
 

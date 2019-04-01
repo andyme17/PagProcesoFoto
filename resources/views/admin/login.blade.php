@@ -27,7 +27,6 @@
                         </label>
                     </div>
                 </div>
-                <a class="pb-4 pt-2 d-block" href="{{ route('register') }}">Crear una nueva cuenta</a>
                 <div class="form-group">            
                     <button type="submit" class="btn btn-primary">
                         Ingresar
