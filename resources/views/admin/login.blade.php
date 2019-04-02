@@ -1,9 +1,14 @@
 @extends('admin.layouts.template')
 
 @section('title','PF | Iniciar sesión')
+
 <!--Login Admin -->
 @section('content')
-<div class="container my-3 py-5">
+
+<div class="container my-3 py-2">
+    <div class="mb-4 py-2 text-center">
+        <img class="text-center" src="../img/header_logo_pf.png" alt="Logotipo de la empresa" height="50">
+    </div>
     <div class="row">
         <div class="col-10 col-md-6 border p-4 mx-auto shadow">
             <h2 class="titulo font-weight-bold text-center pt-3 pb-1">Iniciar Sesión</h2>

@@ -14,7 +14,7 @@ class AdminHomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('roles');
     }
 
     /**
@@ -24,6 +24,6 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-        return view('admin/admin_home');
+        return view('admin.index');
     }
 }

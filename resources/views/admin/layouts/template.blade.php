@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     
     <!-- Icon -->
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="../img/favicon.ico">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -22,14 +22,11 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-2 pt-4 text-center">
-        <img class="text-center" src="../img/header_logo_pf.png" alt="Logotipo de la empresa" height="50">
-    </div>
-    <main>
+    <main class="py-4">
         @yield('content')
-    </main>   
-    <script src="js/jquery-3.3.1.min.js" ></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    </main>  
+    <script src="../js/jquery-3.3.1.min.js" ></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

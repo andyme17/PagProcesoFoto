@@ -23,7 +23,7 @@ class AdministratorController extends Controller
      *
      * @var string
     */
-    protected $redirectTo = '/admin_home';
+    protected $redirectTo = '/admin/index';
 
     public function showLoginForm()
     {
@@ -51,10 +51,6 @@ class AdministratorController extends Controller
     
         ]);    
     } 
-
-    protected function redirectTo() {
-        return '/admin_home';
-     }
 
     protected function authenticated(Request $request,$user){
     
@@ -84,4 +80,12 @@ class AdministratorController extends Controller
         $table_cltsesion -> save();     
     }   
 
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request) ?: redirect('/admin/login');
+    }
 }
