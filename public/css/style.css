@@ -10,9 +10,13 @@ nav{
     font-family: 'Roboto', sans-serif;
     font-size: 1.05rem;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.8) !important;
+}
   
 .navbar-dark .navbar-nav .nav-link:hover{
-    color: white;
+    color: #fff !important;
 }
   
 .iconf{

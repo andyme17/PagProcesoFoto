@@ -37,44 +37,23 @@ Route::view('aviso','aviso')->name('aviso');
 Route::get('contacto','MessagesController@create')->name('contacto.create');
 Route::post('contacto','MessagesController@store')->name('contacto.store');
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////   Rutas de autenticación del usuario               ////////////////////////////
 
-//Auth::routes();
-
-// Authentication Routes...
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-
-// Registration Routes...
-if ($options['register'] ?? true) {
-    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-    Route::post('register', 'Auth\RegisterController@register');
-}
-
-// Password Reset Routes...
-if ($options['reset'] ?? true) {
-    $this->resetPassword();
-}
-
-// Email Verification Routes...
-if ($options['verify'] ?? false) {
-    $this->emailVerification();
-}
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////   Rutas de autenticación del administrador              ////////////////////////////
+///////////////    Rutas de autenticación del administrador         ////////////////////////////
 
-// Authentication Routes...
 Route::get('admin/login', 'Admin\AdministratorController@showLoginForm')->name('admin.login');
 Route::post('admin/login', 'Admin\AdministratorController@login');
 Route::post('admin/logout', 'Admin\AdministratorController@logout')->name('admin.logout');
 
 Route::get('/admin/index', 'Admin\AdminHomeController@index');
 
+//CRUD Usuarios
+
+//Route::resource('admin','AdminHomeController');
 
 
 
