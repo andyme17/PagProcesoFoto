@@ -49,11 +49,11 @@ Route::get('admin/login', 'Admin\AdministratorController@showLoginForm')->name('
 Route::post('admin/login', 'Admin\AdministratorController@login');
 Route::post('admin/logout', 'Admin\AdministratorController@logout')->name('admin.logout');
 
-Route::get('/admin/index', 'Admin\AdminHomeController@index');
+//Route::get('/admin/index', 'Admin\AdminHomeController@index');
 
 //CRUD Usuarios
 
-//Route::resource('admin','AdminHomeController');
+Route::resource('admin','Admin\AdminHomeController');
 
 
 

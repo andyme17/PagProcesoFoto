@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
            <img src="../img/header_logo_pf-n.png" alt="Logotipo de la empresa" width="150" height="auto">

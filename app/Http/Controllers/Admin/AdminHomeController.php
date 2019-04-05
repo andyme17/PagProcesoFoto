@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin;
+use Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -25,7 +26,8 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-        $users = \App\Admin::all();
+        //$users = Admin::all();
+        $users = Admin::paginate(6);
 
         return view('admin.index', compact('users'));
     }
@@ -37,7 +39,7 @@ class AdminHomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -48,7 +50,25 @@ class AdminHomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => ['required', 'string', 'max:255'],
+            'apellido' => ['required', 'string', 'max:255'],
+            'emailpf' => ['required', 'string', 'email', 'max:255', 'unique:pf_cliente'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'perfil_id' => ['required'],
+        ],[
+            'nombre.required' => 'Ingresa tu nombre',
+            'apellido.required' => 'Ingresa tus apellidos',
+            'emailpf.required' => 'Ingresa tu correo electrónico',
+            'emailpf.email' => 'Ingresa un correo electrónico válido',
+            'emailpf.email' => 'Ingresa un correo electrónico válido',
+            'perfil_id.required' => 'Asigna un perfil al usuario',
+        ]);
+
+        Admin::create($request->all());
+        
+        Session::flash('message','Usuario creado correctamente');
+        return redirect()->route('admin.index');
     }
 
     /**

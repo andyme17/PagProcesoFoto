@@ -23,7 +23,7 @@ class AdministratorController extends Controller
      *
      * @var string
     */
-    protected $redirectTo = '/admin/index';
+    protected $redirectTo = '/admin';
 
     public function showLoginForm()
     {
@@ -41,7 +41,7 @@ class AdministratorController extends Controller
 
     protected function validateLogin(Request $request)
     {
-        $datos = $request->validate([
+        $request->validate([
             'emailpf' => 'required|string|email',
             'password' => 'required|string',
         ],[

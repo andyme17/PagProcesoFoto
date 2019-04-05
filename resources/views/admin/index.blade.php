@@ -9,7 +9,13 @@
 <div class="container mt-5 pt-4">
     <h2 class="titulo font-weight-bold">Bienvenido {{ Auth::guard('admin')->user()->nombre }}</h2>
     <div class="content my-4">
-        <h3>Usuarios</h3>
+        <h4>Usuarios registrados en el sistema</h4>
+        <div class="text-right">
+            <a href="{{ route('admin.create') }}" class="btn btn-info mb-3">Crear nuevo usuario</a>
+        </div>
+        @if (Session::has('message'))
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
+        @endif
         <table class="table my-4 py-3">
             <thead>
                 <tr>
@@ -32,8 +38,11 @@
                 @endforeach()
             </tbody>
         </table>
+        {{ $users -> links() }}
     </div>
 </div>
-<!-- footer -->
-<p class="mt-5 bg-dark text-center p-1 text-white">© 2019 | Comunicación e Información S.A. de C.V. | Todos los derechos reservados.</p>
+<div>
+    <!-- footer -->
+    <p class="mt-5 bg-dark text-center p-1 text-white">© 2019 | Comunicación e Información S.A. de C.V. | Todos los derechos reservados.</p>
+</div>
 @endsection

@@ -11,7 +11,7 @@ class Admin extends Authenticatable
 
     protected $table = 'pf_usuario';
     
-    protected $fillable = ['emailpf', 'password'];
+    protected $fillable = ['nombre','apellido','emailpf', 'password','perfil_id'];
 
     protected $hidden   = ['password', 'remember_token'];
 }
