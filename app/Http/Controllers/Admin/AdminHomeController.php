@@ -79,7 +79,8 @@ class AdminHomeController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Admin::where('id', $id)->first();
+        return $user;
     }
 
     /**
@@ -90,7 +91,8 @@ class AdminHomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Admin::where('id', $id)->first();
+        return view('admin.edit',compact('user'));
     }
 
     /**
@@ -102,7 +104,14 @@ class AdminHomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Admin::find($id);
+
+        $user
+
+        Admin::update($request->all());
+
+        Session::flash('message','Usuario actualizado correctamente');
+        return redirect()->route('admin.index');
     }
 
     /**

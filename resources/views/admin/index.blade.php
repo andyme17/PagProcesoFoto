@@ -2,8 +2,6 @@
 
 @section('title','PF | Inicio')
 
-@include('admin.layouts.nav-admin')
-
 @section('content')
 
 <div class="container mt-5 pt-4">
@@ -24,6 +22,7 @@
                     <th>Apellido</th>
                     <th>Email</th>
                     <th>Perfil</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +33,7 @@
                     <td>{{ $user->apellido}}</td>
                     <td>{{ $user->emailpf}}</td>
                     <td>{{ $user->perfil_id}}</td>
+                    <td><a href="{{ route('admin.edit', $user->id) }}" class="btn btn-info"><i class="fas fa-edit"></i> Editar</a></td>
                 </tr>
                 @endforeach()
             </tbody>
@@ -41,8 +41,5 @@
         {{ $users -> links() }}
     </div>
 </div>
-<div>
-    <!-- footer -->
-    <p class="mt-5 bg-dark text-center p-1 text-white">© 2019 | Comunicación e Información S.A. de C.V. | Todos los derechos reservados.</p>
-</div>
+
 @endsection
