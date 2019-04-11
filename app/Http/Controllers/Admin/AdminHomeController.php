@@ -106,9 +106,11 @@ class AdminHomeController extends Controller
     {
         $user = Admin::find($id);
 
-        $user
-
-        Admin::update($request->all());
+        $user->nombre = $request->nombre;
+        $user->apellido = $request->apellido;
+        $user->emailpf = $request->emailpf;
+        $user->perfil_id = $request->perfil_id;
+        $user->save();
 
         Session::flash('message','Usuario actualizado correctamente');
         return redirect()->route('admin.index');
@@ -122,6 +124,11 @@ class AdminHomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Admin::find($id);
+
+        $user->delete();
+
+        Session::flash('message','Usuario eliminado correctamente');
+        return redirect()->route('admin.index');
     }
 }

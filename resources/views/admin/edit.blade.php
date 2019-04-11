@@ -24,15 +24,6 @@
                 <small id="emailHelp" class="form-text text-muted">Ejemplo: ejemplo@dominio.com</small>
                 {!! $errors-> first('emailpf','<small class="text-danger">:message</small><br>') !!} 
             </div>
-            <label for="">Desea cambiar la contraseña: </label>
-                <div class="form-group pb-3">
-                    <input type="password" name="password" class="form-control" placeholder="Contraseña:" value="{{ $user->contraseña }}">
-                    {!! $errors-> first('password','<small class="text-danger">:message</small><br>') !!}
-                </div>
-                <div class="form-group pb-3">
-                    <input type="password" name="password_confirmation" class="form-control" placeholder="Repita la contraseña:">
-                    {!! $errors-> first('password_confirmation','<small class="text-danger">:message</small><br>') !!}
-                </div>
             <div class="form-group pb-3">
                 <label for="">Cambiar perfil del usuario</label>
                 <select class="form-control" name="perfil_id" id="perfil_id">

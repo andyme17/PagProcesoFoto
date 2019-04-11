@@ -12,7 +12,7 @@ nav{
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(250, 218, 218, 0.8) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
 }
   
 .navbar-dark .navbar-nav .nav-link:hover{
@@ -61,4 +61,27 @@ nav{
 thead{
     background-color: rgb(22, 55, 69);
     color: #fff;
+}
+
+.pagination{
+    justify-content: center !important;
+}
+
+.page-link{
+    color: #0f3b75;
+}
+
+.page-link:hover{
+    color: #061a35;
+}
+.page-item.active .page-link{
+    background-color: rgb(52, 85, 128) !important;
+    border-color: #0c3162  !important;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
 }

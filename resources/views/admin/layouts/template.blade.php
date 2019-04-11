@@ -27,10 +27,9 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <!-- footer -->
-        <div>
-            <p class="mt-5 bg-dark text-center p-1 text-white">© 2019 | Comunicación e Información S.A. de C.V. | Todos los derechos reservados.</p>
-        </div>
+        <footer class="mt-4 bg-dark">
+            <p class=" text-center p-1 text-white">© 2019 | Comunicación e Información S.A. de C.V. | Todos los derechos reservados.</p>
+        </footer>
     @endauth 
     
     @guest('admin')
