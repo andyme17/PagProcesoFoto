@@ -19,16 +19,7 @@ nav{
     color: #fff !important;
 }
   
-.iconf{
-    font-size: 30px;
-    color: rgba(255, 255, 255, 0.651);
-}
-  
-.iconf:hover{
-    font-size: 30px;
-    color: rgba(255, 255, 255, 0.9);
-}
-  
+ 
 .font-secondary{
     font-family: 'Open Sans', sans-serif;
 }
@@ -79,9 +70,40 @@ thead{
     border-color: #0c3162  !important;
 }
 
+.size-ico{
+    font-size:1.5rem ;
+    vertical-align: middle;
+    padding: 0.5rem;
+    color: white;
+}
+
+.fa-facebook:hover{
+	background-color: rgb(8, 8, 89);
+}
+
+.fa-instagram:hover{
+	background-color: rgb(171, 20, 171);
+}
+
+.fa-twitter:hover{
+	background-color: rgb(13, 149, 228);
+}
+
+/*
+.iconf{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.651);
+}
+  
+.iconf:hover{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}*/
+ 
+/*
 footer{
     position: relative;
     bottom: 0;
     width: 100%;
     height: 40px;
-}
+}*/

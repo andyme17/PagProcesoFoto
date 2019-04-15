@@ -3,10 +3,10 @@
 @section('title','PF | Iniciar sesión')
 
 @section('content')
-<div class="container my-5 py-5">
+<div class="container my-4 pt-5">
     <div class="row">
-        <div class="col-10 col-md-6 border p-4 mx-auto shadow">
-            <h2 class="titulo font-weight-bold text-center pt-3 pb-1">Inicia Sesión</h2>
+        <div class="col-10 col-md-6 border mx-auto shadow">
+            <h2 class="titulo font-weight-bold text-center py-1">Inicia Sesión</h2>
             <hr>
             <form method="POST" action="{{ route('login') }}" class="font-secondary my-4 py-2">
                 @csrf 
@@ -27,18 +27,15 @@
                         </label>
                     </div>
                 </div>
-                <a class="pb-4 pt-2 d-block" href="{{ route('register') }}">Crear una nueva cuenta</a>
                 <div class="form-group">            
-                    <button type="submit" class="btn btn-primary">
-                        Ingresar
-                    </button>
-
+                    <button type="submit" class="btn btn-primary float-right">Ingresar</button>
                     @if (Route::has('password.request'))
-                        <a class="btn btn-link " href="{{ route('password.request') }}">
+                        <a class="btn btn-link pt-3" href="{{ route('password.request') }}">
                             ¿Has olvidado la contraseña?
                         </a>
                     @endif
                 </div>
+                <a class="pl-3 d-block" href="{{ route('register') }}">Crear una nueva cuenta</a>
             </form>
         </div>        
     </div>   

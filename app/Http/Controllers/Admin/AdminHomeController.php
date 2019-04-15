@@ -27,7 +27,7 @@ class AdminHomeController extends Controller
     public function index()
     {
         //$users = Admin::all();
-        $users = Admin::paginate(6);
+        $users = Admin::paginate(5);
 
         return view('admin.index', compact('users'));
     }

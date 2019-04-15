@@ -22,7 +22,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('fotografos')}}">FOTÓGRAFOS</a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('contacto.create')}}">CONTACTO</a>
                 </li>
             </ul>

@@ -65,12 +65,12 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row pt-4">
+<div class="container my-5 pb-5">
+    <div class="row">
         <div class="col-12 pb-2 col-md-8">
             <h5 class="p-1 titulo"><i class="fas fa-building"></i> Oficinas</h5>
             <hr>
-            <iframe class="pl-5 py-2" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d240882.46112047488!2d-99.30450260406086!3d19.378310437206675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9c6916e7fb%3A0x638f146617d0d207!2sComunicacion+E+Informacion+S.A.+de+C.V.!5e0!3m2!1ses-419!2smx!4v1550781994001" width="700" height="450" frameborder="0" allowfullscreen></iframe>
+            <iframe class="pl-5 py-5" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d240882.46112047488!2d-99.30450260406086!3d19.378310437206675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9c6916e7fb%3A0x638f146617d0d207!2sComunicacion+E+Informacion+S.A.+de+C.V.!5e0!3m2!1ses-419!2smx!4v1550781994001" width="700" height="450" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="col-12 pb-2 col-md-4">
             <h5 class="p-1 titulo"><i class="fas fa-map-marked-alt"></i> Ubicación</h5>
