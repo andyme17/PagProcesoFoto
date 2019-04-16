@@ -27,8 +27,8 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <footer class="mt-4 bg-dark">
-            <p class=" text-center p-1 text-white">© 2019 | Comunicación e Información S.A. de C.V. | Todos los derechos reservados.</p>
+        <footer class="mt-4 bg-dark fixed-bottom">
+            <article class=" text-center p-1 text-white">© 2019 | Comunicación e Información S.A. de C.V. | Todos los derechos reservados.</article>
         </footer>
     @endauth 
     

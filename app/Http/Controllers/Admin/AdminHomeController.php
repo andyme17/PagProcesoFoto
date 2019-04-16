@@ -79,8 +79,8 @@ class AdminHomeController extends Controller
      */
     public function show($id)
     {
-        $user = Admin::where('id', $id)->first();
-        return $user;
+        $user = Admin::find($id);
+        return view('admin.show',compact('user'));
     }
 
     /**
