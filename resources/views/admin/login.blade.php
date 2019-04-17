@@ -11,7 +11,7 @@
     </div>
     <div class="row">
         <div class="col-10 col-md-6 border p-4 mx-auto shadow">
-            <h2 class="titulo font-weight-bold text-center pt-3 pb-1">Iniciar Sesión</h2>
+            <h2 class="titulo font-weight-bold text-center pt-4">Iniciar Sesión</h2>
             <hr>
             <form method="POST" action="{{ route('admin.login') }}" class="font-secondary my-4 py-2">
                 @csrf 

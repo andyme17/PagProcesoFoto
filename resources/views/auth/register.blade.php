@@ -3,10 +3,10 @@
 @section('title','PF | Registrate')
 
 @section('content')
-<div class="container my-5 py-5">
+<div class="container my-4 pt-5">
     <div class="row">
-        <div class="col-10 col-md-6 border p-4 mx-auto shadow">
-            <h2 class="titulo font-weight-bold text-center pt-3 pb-1">Registrate</h2>
+        <div class="col-10 col-md-6 border mx-auto shadow">
+            <h2 class="titulo font-weight-bold text-center pt-4">Registrate</h2>
             <hr>
             <form method="POST" action="{{ route('register') }}" class="font-secondary my-4 py-4">
                 @csrf 
@@ -39,8 +39,8 @@
                     <input type="password" name="password_confirmation" class="form-control" placeholder="Repita la contraseña:">
                     {!! $errors-> first('password_confirmation','<small class="text-danger">:message</small><br>') !!}
                 </div>
-                <a class="pb-2 d-block" href="{{ route('login') }}">Ya tienes una cuenta</a>
-                <button type="submit" class="btn btn-primary float-right mt-4">Registrate</button>
+                <a class="pb-2 d-block" href="{{ route('login') }}">¿Ya tienes una cuenta?</a>
+                <button type="submit" class="btn btn-primary float-right mb-4">Registrate</button>
             </form>
         </div>
     </div>    

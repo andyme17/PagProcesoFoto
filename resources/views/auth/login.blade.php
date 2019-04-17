@@ -6,7 +6,7 @@
 <div class="container my-4 pt-5">
     <div class="row">
         <div class="col-10 col-md-6 border mx-auto shadow">
-            <h2 class="titulo font-weight-bold text-center py-1">Inicia Sesión</h2>
+            <h2 class="titulo font-weight-bold text-center pt-4">Inicia Sesión</h2>
             <hr>
             <form method="POST" action="{{ route('login') }}" class="font-secondary my-4 py-2">
                 @csrf 
